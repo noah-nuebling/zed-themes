@@ -137,7 +137,7 @@
         "terminal.ansi.dim_magenta": null,
 
         /* Color */
-        "error": "#ed2239", // Color of red stop sign in Xcode report navigator
+        "error": "#ed2239", // Color of red stop sign in Xcode report navigator || Shows up for errors & in search bar text when no results are found
         "error.background": "#3d282fff",
         "error.border": "#522f32ff",
         "hint": "#87878bef",
