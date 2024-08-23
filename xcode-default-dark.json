@@ -4,7 +4,7 @@
   "author": "Lihuen Molina <lihue.molina@gmail.com>",
   "themes": [
     {
-      "name": "Xcode Default Dark",
+      "name": "Noah's Xcode Default Dark",
       "appearance": "dark",
       "style": {
         /* Borders */
@@ -17,22 +17,24 @@
 
         /* Various Backgrounds
             (Backgrounds of elements that don't have any other styling attributes.) */
-        "background": "#2a2a30ff",
-        "surface.background": "#26262bff",
-        "elevated_surface.background": "#212127ff",
-        "drop_target.background": "#747478",
-        "status_bar.background": "#1d1d22ff",
-        "title_bar.background": "#1d1d22ff",
-        "toolbar.background": "#2a2a30ff",
-        "tab_bar.background": "#1d1d22ff",
+        "background.appearance": "opaque", // Noah: When I try to use 'blurred' here the window borders and shadow disappear. (23.08.2024 macOS Sequoia Beta)
+        "background": "#2a2a30", // This is the item-background when dragging and dropping a file from the sidebar, also the editor background in case editor.background is transparent. We want the item bg to be transparent but making this opaque is only way I know to decouple search field bg from editor bg which we also want.
+        "surface.background": "#26262b",
+        "elevated_surface.background": "#212127",
+        "drop_target.background": "#ffffff10", // This is used when drag n dropping tabs and files. Xcode doesn't have this but ours looks ok.
+        "status_bar.background": "#1e1e1e", // The bar at the very bottom of the window
+        "title_bar.background": "#363637", // This colors the draggable area at the top of the window
+        "toolbar.background": "#202022ff", // The area where the current file path + search shows up.
+        "tab_bar.background": "#1e1e1e",
         "search.match_background": "#656f81",
 
         /* Tabs */
-        "tab.inactive_background": "#1d1d22ff",
-        "tab.active_background": "#2a2a30ff",
+        "tab.inactive_background": "#202022ff",
+        "tab.active_background": "#335273",
 
-        /* Panels */
-        "panel.background": "#212127ff",
+        /* Panels
+          (This is the sidebar on the left) */
+        "panel.background": "#282828ff",
         "panel.focused_border": null,
 
         /* Panes */
@@ -46,10 +48,10 @@
         "element.disabled": "#303036ff",
 
         /* Ghost Elements */
-        "ghost_element.background": "#00000000",
-        "ghost_element.hover": "#28282eff",
-        "ghost_element.active": "#2e2e34ff",
-        "ghost_element.selected": "#2e2e34ff",
+        "ghost_element.background": "#22222200",
+        "ghost_element.hover": "#ffffff10", // Hover effect on outline-less buttons, x-es in the tabs, and files in the sidebar (aka panel) || looks very different on each of those so we don't use it. Update: By lowering opacity and making the color darker we made it look ok for all cases. Update 2: On the blue selected tabs this looks weird tho. So we just accept the inconsistent look.
+        "ghost_element.active": "#3b3b3bee", // This shows when you click and hold on a outline-less button or file. Not using this. Same reason as ghost_element.hover.
+        "ghost_element.selected": "#1568c033", // Colors the opened file in the sidebar (aka panel) Can't give this a bright color since we
         "ghost_element.disabled": "#28282eff",
 
         /* Icons */
@@ -61,10 +63,10 @@
 
         /* Text */
         "text": "#ffffffdf",
-        "text.muted": "#87878bef",
+        "text.muted": "#ffffffcc", // Noah: This is used in the tab bar and sidebar (aka panel)
         "text.placeholder": "#9d9d9fec",
         "text.disabled": "#5f5f64f5",
-        "text.accent": "#3b82f7ff",
+        "text.accent": "#007aff", // This is used to indicate on/off state on ghost buttons, and it draws an outline around the selected file in the sidebar. Kinda confusing.
 
         /* Links */
         "link_text.hover": null,
@@ -72,63 +74,76 @@
         /* Scrollbar */
         "scrollbar.thumb.border": "#00000000",
         "scrollbar.thumb.hover_background": "#252931ff",
-        "scrollbar.track.background": "#00000000",
-        "scrollbar.track.border": "#2f3239ff",
-        "scrollbar_thumb.background": "#ffffff66",
+        "scrollbar.track.background": "#2a2a30", // Bg in the editor
+        "scrollbar.track.border": "#3f3f45ff", //"#2f3239ff" // Border in the editor || ? Also bg in the sidebar ? (aka panel)
+        "scrollbar_thumb.background": "#97979dcc", // Color of the scrollbar handle.
 
         /* Editor */
+
         "editor.foreground": "#ffffffdf",
-        "editor.background": "#2a2a30ff",
-        "editor.gutter.background": "#2a2a30ff",
-        "editor.active_line.background": "#2f3239ff",
+
+        "editor.background": "#2a2a3000", // This colors the background of the search field as well as the editor background.
+        "editor.document_highlight.read_background": "#484d5d",
+        "editor.document_highlight.write_background": "#ffffff00", // Don't know what this is
+        "editor.gutter.background": "#2a2a30ff", // This is the bg color of the left-side of the editor where the line numbers are
+        "editor.active_line.background": "#2f3239ff", // Background of the selected line
+        "editor.subheader.background": "#26262bff",
+        "editor.highlighted_line.background": "#ffffff00", // Don't know what this is
+
         "editor.line_number": "#747478",
         "editor.active_line_number": "#ffffffdf",
         "editor.invisible": "#535f6dff",
-        "editor.document_highlight.read_background": "#484d5d",
-        "editor.subheader.background": "#26262bff",
-        "editor.highlighted_line.background": null,
-        "editor.document_highlight.write_background": null,
-        "editor.wrap_guide": null,
-        "editor.active_wrap_guide": null,
+        "editor.wrap_guide": "#ffffffff", // Don't know what this does
+        "editor.active_wrap_guide": "#ffffffff", // Don't know what this does
 
-        /* Terminal */
-        "terminal.background": "#2a2a30ff",
-        "terminal.foreground": "#ffffffdf",
-        "terminal.bright_foreground": null,
-        "terminal.dim_foreground": null,
-        "terminal.ansi.black": "#2a2a30ff",
-        "terminal.ansi.bright_black": "#5f5f64f5",
-        "terminal.ansi.dim_black": "#292931ff",
-        "terminal.ansi.red": "#f13f38f9",
-        "terminal.ansi.bright_red": "#812c2cff",
-        "terminal.ansi.dim_red": "#e2635df5",
-        "terminal.ansi.green": "#67c03ef9",
-        "terminal.ansi.bright_green": "#3c672cff",
-        "terminal.ansi.dim_green": "#7bbb5df5",
-        "terminal.ansi.yellow": "#fff543f9",
-        "terminal.ansi.bright_yellow": "#998635ff",
-        "terminal.ansi.dim_yellow": "#ffea6af5",
-        "terminal.ansi.blue": "#348dfff9",
-        "terminal.ansi.bright_blue": "#29539dff",
-        "terminal.ansi.dim_blue": "#5e9efff5",
-        "terminal.ansi.magenta": "#ff4765f9",
-        "terminal.ansi.bright_magenta": "#933244ff",
-        "terminal.ansi.dim_magenta": "#fc6c82f5",
-        "terminal.ansi.cyan": "#7cdffff9",
-        "terminal.ansi.bright_cyan": "#4f7f9bff",
-        "terminal.ansi.dim_cyan": "#97dffff5",
-        "terminal.ansi.white": "#ffffffdf",
-        "terminal.ansi.bright_white": "#ffffffdf",
-        "terminal.ansi.dim_white": "#87878bef",
+        /* Terminal
+
+          Notes:
+          - We use dark terminal since it's too much work figure out nice colors for light mode and I didn't love the original colors from https://github.com/skarline/zed-xcode-themes
+          - Colors based on our iTerm 2 profile.
+          - The terminal.ansi color customization doesn't seem to do anything (23.08.2024, macOS Sequoia Beta)
+          */
+
+        "terminal.background": "#181818",
+        "terminal.foreground": "#feffff",
+        "terminal.bright_foreground": "#feffff",
+        "terminal.dim_foreground": "#feffff",
+
+        "terminal.ansi.red": "#ea4b56",
+        "terminal.ansi.blue": "#70c6f4",
+        "terminal.ansi.cyan": "#83d9c6",
+        "terminal.ansi.black": "#7c7c7c",
+        "terminal.ansi.green": "#cae893",
+        "terminal.ansi.white": "#ced2dd",
+        "terminal.ansi.yellow": "#f5c149",
+        "terminal.ansi.magenta": "#bf91e6",
+
+        "terminal.ansi.bright_red": "#ff677c",
+        "terminal.ansi.bright_blue": "#9adafb",
+        "terminal.ansi.bright_cyan": "#99e6d5",
+        "terminal.ansi.bright_black": "#858585",
+        "terminal.ansi.bright_green": "#d7edaf",
+        "terminal.ansi.bright_white": "#e1e6f4",
+        "terminal.ansi.bright_yellow": "#f7cd73",
+        "terminal.ansi.bright_magenta": "#d1a1fb",
+
+        "terminal.ansi.dim_red": null,
+        "terminal.ansi.dim_blue": null,
+        "terminal.ansi.dim_cyan": null,
+        "terminal.ansi.dim_black": null,
+        "terminal.ansi.dim_green": null,
+        "terminal.ansi.dim_white": null,
+        "terminal.ansi.dim_yellow": null,
+        "terminal.ansi.dim_magenta": null,
 
         /* Color */
-        "error": "#c93c36ff",
+        "error": "#ed2239", // Color of red stop sign in Xcode report navigator
         "error.background": "#3d282fff",
         "error.border": "#522f32ff",
         "hint": "#87878bef",
         "hint.background": "#31313afd",
         "hint.border": "#3f3f45fb",
-        "info": "#81d0faff",
+        "info": "#4493f1", // Color of the 'i' boxes of Xcode analyzer
         "info.background": "#2e3a49ff",
         "info.border": "#405463ff",
         "predictive": "#747478",
@@ -137,24 +152,25 @@
         "renamed": "#83d1ceff",
         "renamed.background": "#303b43ff",
         "renamed.border": "#405458ff",
-        "success": "#539a32ff",
+        "success": "#5dc825", // Color or the green checkboxes in the Xcode report navigator
         "success.background": "#2c372fff",
         "success.border": "#344631ff",
-        "warning": "#f8d84aff",
+        "warning": "#ffc503", // Color of yellow triangle in Xcode report navigator
         "warning.background": "#423d30ff",
         "warning.border": "#5e5637ff",
         "unreachable": null,
         "unreachable.background": null,
         "unreachable.border": null,
 
-        /* Git */
-        "conflict": "#cd9f35ff",
+        /* Git
+          Noah: #007aff is Xcode's border color for git changes. */
+        "conflict": "#ffc503", // Color of yellow triangle in Xcode report navigator
         "conflict.background": "#3d362eff",
         "conflict.border": "#534731ff",
-        "created": "#539a32ff",
+        "created": "#5dc825", // Color or the green checkboxes in the Xcode report navigator
         "created.background": "#2c372fff",
         "created.border": "#344631ff",
-        "deleted": "#c93c36ff",
+        "deleted": "#ed2239", // Color of red stop sign in Xcode report navigator
         "deleted.background": "#3d282fff",
         "deleted.border": "#522f32ff",
         "hidden": null,
@@ -163,8 +179,8 @@
         "ignored": null,
         "ignored.background": null,
         "ignored.border": null,
-        "modified": "#cd9f35ff",
-        "modified.background": "#3d362eff",
+        "modified": "#007aff", // Color of Xcode inline git change indicator border
+        "modified.background": "#194a83", // Color of Xcode inline git change indicator background
         "modified.border": "#534731ff",
 
         /* Players */

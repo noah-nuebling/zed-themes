@@ -1,0 +1,20 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette
+{
+  "ui_font_size": 15,
+  "buffer_font_size": 12,
+  "ui_font_family": "System Font",
+  "buffer_font_family": "SF Mono", // This only works if you install the SF Mono font from the Apple website.
+  "buffer_font_fallbacks": ["MesloLGL Nerd Font"], // This is for rendering special symbols for my fish shell theme. Only works if you install the font.
+  "theme": {
+    "mode": "system",
+    "light": "Noah's Xcode Default Light",
+    "dark": "Noah's Xcode Default Dark"
+  }
+}
