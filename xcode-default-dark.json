@@ -8,7 +8,7 @@
       "appearance": "dark",
       "style": {
         /* Borders */
-        "border": "#3f3f45ff",
+        "border": "#353535",
         "border.variant": "#3f3f45ff",
         "border.focused": null,
         "border.disabled": null,
@@ -104,10 +104,10 @@
           - The terminal.ansi color customization doesn't seem to do anything (23.08.2024, macOS Sequoia Beta)
           */
 
-        "terminal.background": "#181818",
-        "terminal.foreground": "#feffff",
-        "terminal.bright_foreground": "#feffff",
-        "terminal.dim_foreground": "#feffff",
+        "terminal.background": "#202022", // Bg color
+        "terminal.foreground": "#efefef", // Text color
+        "terminal.bright_foreground": "#feffff80",
+        "terminal.dim_foreground": "#feffff80",
 
         "terminal.ansi.red": "#ea4b56",
         "terminal.ansi.blue": "#70c6f4",
