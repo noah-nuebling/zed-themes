@@ -13,7 +13,7 @@ Cool themes for the [zed](https://zed.dev) editor.
 **Other**
 
 - To install these themes copy the .json files from the repository root into `~/.config/zed/themes`.
-- Also take a look at `demo/zed-settings.json` for an example of how to use Apple fonts and stuff - to really make it look like Xcode.
+- Also take a look at `demo/zed-settings.json` for an example of how to use Apple fonts with zed and stuff - to really make it look like Xcode.
 - The Xcode-like themes are based on https://github.com/skarline/zed-xcode-themes.
 - When developing themes, https://zed-themes.com/themes/new can be helpful for figuring out which params do what in a zed-theme.json file.
 
