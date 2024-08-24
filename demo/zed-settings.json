@@ -9,8 +9,8 @@
 {
   "ui_font_size": 15,
   "buffer_font_size": 12,
-  "ui_font_family": "System Font",
-  "buffer_font_family": "SF Mono", // This only works if you install the SF Mono font from the Apple website.
+  "ui_font_family": "System Font", // This works out-of-the-box on Mac computers. On other systems you might have to install the SF Pro font from Apple's website.
+  "buffer_font_family": "SF Mono", // This only works if you install the SF Mono font from the Apple website. (Even on Macs)
   "buffer_font_fallbacks": ["MesloLGL Nerd Font"], // This is for rendering special symbols for my fish shell theme. Only works if you install the font.
   "theme": {
     "mode": "system",
