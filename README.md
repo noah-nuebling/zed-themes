@@ -8,10 +8,11 @@ https://zed-themes.com/themes/new can be helpful for figuring out which params d
 Also take a look at demo-zed-settings to find out how to use Apple fonts and stuff,
 to really make it look like Xcode.
 
-**Light**
+**Xcode Light**
 
-![light theme](demo/light.jpg)
+<img src="https://raw.githubusercontent.com/noah-nuebling/zed-themes/main/demo/light.jpeg?token=GHSAT0AAAAAACFZ3FMFQUK5GLSE5XZE47DMZWJEYTA"></img>
 
-**Dark**
+**Xcode Dark**
 
-![dark theme](demo/dark.jpg)
+![demo/dark.jpg](https://raw.githubusercontent.com/noah-nuebling/zed-themes/main/demo/dark.jpeg?token=GHSAT0AAAAAACFZ3FMFYOW23LYZYOCFRLRSZWJEZMQ)
+
