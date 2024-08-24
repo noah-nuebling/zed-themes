@@ -100,12 +100,13 @@
           Notes:
           - We use dark terminal since it's too much work figure out nice colors for light mode and I didn't love the original colors from https://github.com/skarline/zed-xcode-themes
           - Update: Can't really adjust colors anyways, so going with light-theme after all.
+          - Update2: Green is unreadable in light-theme, so going back to dark.
           - Colors based on our iTerm 2 profile.
           - The terminal.ansi color customization doesn't seem to do anything (23.08.2024, macOS Sequoia Beta)
           */
 
-        "terminal.background": "#feffff",
-        "terminal.foreground": "#383e44",
+        "terminal.background": "#202022",
+        "terminal.foreground": "#efefef",
         "terminal.bright_foreground": "#feffff",
         "terminal.dim_foreground": "#feffff",
 
