@@ -1,11 +1,6 @@
 # zed-themes
-Cool themes for the zed editor
 
-Xcode themes based on https://github.com/skarline/zed-xcode-themes
-
-https://zed-themes.com/themes/new can be helpful for figuring out which params do what in a zed-theme.json file.
-
-Also take a look at demo/zed-settings.json to find out how to use Apple fonts and stuff - to really make it look like Xcode.
+Cool themes for the [zed](https://zed.dev) editor.
 
 **Xcode Light**
 
@@ -15,3 +10,10 @@ Also take a look at demo/zed-settings.json to find out how to use Apple fonts an
 
 ![demo/dark.jpg](https://raw.githubusercontent.com/noah-nuebling/zed-themes/main/demo/dark.jpeg?token=GHSAT0AAAAAACFZ3FMFYOW23LYZYOCFRLRSZWJEZMQ)
 
+**Other**
+
+Xcode themes based on https://github.com/skarline/zed-xcode-themes.
+
+https://zed-themes.com/themes/new can be helpful for figuring out which params do what in a zed-theme.json file.
+
+Also take a look at demo/zed-settings.json to find out how to use Apple fonts and stuff - to really make it look like Xcode.
